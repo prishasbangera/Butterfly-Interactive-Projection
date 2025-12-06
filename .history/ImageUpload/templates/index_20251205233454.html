@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="eg">
+<head>
+  <meta charset="UTF-8" />
+  <title>Image Upload</title>
+</head>
+<body>
+  <h1>Upload Your Butterfly!</h1>
+
+  <form method="POST" enctype="multipart/form-data">
+    <!-- 1) get an input -->
+    <input type="file" name="file" accept="image/*" />
+    <button type="submit">upload</button>
+  </form>
+
+  {% if img_url %}
+    <h2>Your Image</h2>
+    <img src="{{ img_url }}" alt="uploaded image" style="max-width:400px;">
+
+    <h3>Download</h3>
+    
+    <a href="{{ img_url }}" download>Download this image</a>
+  {% endif %}
+</body>
+</html>
