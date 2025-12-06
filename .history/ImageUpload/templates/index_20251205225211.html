@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>Image Upload</title>
+</head>
+<body>
+  <h1>Upload Your Butterfly</h1>
+
+  <form method="POST" enctype="multipart/form-data">
+    <input type="file" name="file" accept="image/*" />
+    <button type="submit">업로드</button>
+  </form>
+
+  {% if img_url %}
+    <h2>업로드된 이미지</h2>
+    <img src="{{ img_url }}" alt="uploaded image" style="max-width:400px;">
+  {% endif %}
+</body>
+</html>
